@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   THEME VARIABLES
+========================= */
+[data-theme="light"] {
+  /* Base colors */
+  --bg-color: #f9fafb;
+  --text-color: #111827;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+
+  /* Gradients */
+  --gradient-text: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #0f172a 0.89%,
+    #1e293b 17.23%,
+    #334155 42.04%,
+    #475569 55.12%,
+    #64748b 71.54%,
+    #94a3b8 100%
+  );
+  --gradient-blue: linear-gradient(
+    157.81deg,
+    #dbeafe -43.27%,
+    #bfdbfe -21.24%,
+    #93c5fd 12.19%,
+    #60a5fa 29.82%,
+    #3b82f6 51.94%,
+    #2563eb 90.29%
+  );
+  --gradient-black: linear-gradient(
+    144.39deg,
+    #e5e7eb -278.56%,
+    #d1d5db -78.47%,
+    #ffffff 91.61%
+  );
+  --gradient-gray: linear-gradient(
+    153.47deg,
+    rgba(0,0,0,0) -341.94%,
+    #f3f4f6 95.11%
+  );
+  --gradient-discount: linear-gradient(125.17deg, #f9fafb 0%, #f3f4f6 100%);
+
+  /* Fancy blurred gradients */
+  --blue-blur: linear-gradient(180deg, rgba(59, 130, 246, 0.1) 0%, #3b82f6 100%);
+  --pink-blur: linear-gradient(90deg, #fbcfe8 0%, #f472b6 100%);
+  --white-blur: rgba(255, 255, 255, 0.8);
+}
+
+/* DARK THEME */
+:root {
+  --bg-color: #00040f;
+  --text-color: #ffffff;
+  --card-bg: #0a0c1a;
+  --card-shadow: rgba(66, 71, 91, 0.1);
+
+  --gradient-text: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #def9fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
+  --gradient-blue: linear-gradient(
+    157.81deg,
+    #def9fa -43.27%,
+    #bef3f5 -21.24%,
+    #9dedf0 12.19%,
+    #7de7eb 29.82%,
+    #5ce1e6 51.94%,
+    #33bbcf 90.29%
+  );
+  --gradient-black: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  --gradient-gray: linear-gradient(
+    153.47deg,
+    rgba(255, 255, 255, 0) -341.94%,
+    #14101d 95.11%
+  );
+  --gradient-discount: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
+
+  --blue-blur: linear-gradient(180deg, rgba(222, 249, 250, 0.1) 0%, #3bc1d9 100%);
+  --pink-blur: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
+  --white-blur: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  transition: all 0.3s ease;
+}
+
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.bg-blue-gradient { background: var(--gradient-blue); }
+.bg-black-gradient { background: var(--gradient-black); }
+.bg-black-gradient-2 { background: var(--gradient-black); }
+.bg-gray-gradient { background: var(--gradient-gray); }
+.bg-discount-gradient { background: var(--gradient-discount); }
+
+.box-shadow {
+  box-shadow: 0px 20px 100px -10px var(--card-shadow);
+}
+
+.sidebar {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-top {
+  0% { transform: translateY(100px); }
+  100% { transform: translateY(0); }
+}
+
+.feedback-container .feedback-card:last-child { margin-right: 0px; }
+.feedback-card { background: transparent; }
+
+.blue__gradient { background: var(--blue-blur); filter: blur(123px); }
+.pink__gradient { background: var(--pink-blur); filter: blur(900px); }
+.white__gradient { background: var(--white-blur); filter: blur(750px); }
+
+.cards { position: relative; width: 100%; perspective: 1000px; }
+.card { position: sticky; top: 15vh; height: 80vh; display: flex; justify-content: center; align-items: center; }
+.content { background: var(--card-bg); padding: 2rem; border-radius: 12px; box-shadow: 0 8px 20px var(--card-shadow); transform-style: preserve-3d; width: 60%; text-align: center; transition: all 0.3s ease; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
