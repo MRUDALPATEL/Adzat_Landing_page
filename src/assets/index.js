@@ -24,10 +24,11 @@ import people02 from "./people02.png";
 import people03 from "./people03.png";
 import adzat from "./Adzat.png"
 import adzatlogo from "./AdzatLogo.svg"
-import adzatlogoshort from "./adzatlogoshort.svg"
 import svg from "./svg.svg"
 import leftarrow from "./leftarrow.svg"
 import rightarrow from "./rightarrow.svg"
+
+const adzatlogoshort = "./public/AdzatLogoShort.svg";
 
 export {
   
