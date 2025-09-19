@@ -28,7 +28,6 @@ import svg from "./svg.svg"
 import leftarrow from "./leftarrow.svg"
 import rightarrow from "./rightarrow.svg"
 
-const adzatlogoshort = "./public/AdzatLogoShort.svg";
 
 export {
   
@@ -57,7 +56,6 @@ export {
   people03,
   adzat,
   adzatlogo,
-  adzatlogoshort,
   svg,
   leftarrow,
   rightarrow,

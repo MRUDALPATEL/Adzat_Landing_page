@@ -13,7 +13,7 @@ import VideoSection from './VideoSection'
 import ProductOverview from "./ProductOverview";
 import Contact from "./Contact";
 import ThemeToggle from "./ThemeToggle";
-
+import Globe from "./Globe";
 
 export {
   Navbar,
@@ -31,4 +31,5 @@ export {
   VideoSection,
   ProductOverview,
   ThemeToggle,
+  Globe,
 };
