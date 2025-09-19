@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className={`flex md:flex-row flex-col pl-12 mt-10`}
+      className={`flex md:flex-row flex-col pl-12 mt-16 h-[580px]`}
       style={{ backgroundColor: "var(--bg-color)", transition: "all 0.3s ease" }}
     >
       {/* Left Side */}
@@ -24,7 +24,7 @@ const Hero = () => {
             style={{ color: "var(--text-color)" }}
           >
             All Jobs. <br className="sm:block hidden" />
-            <span className="text-gradient " >
+            <span className="text-gradient font-funnel" >
               One Platform.
             </span>
             <br />
@@ -50,7 +50,7 @@ const Hero = () => {
           className="font-poppins font-semibold w-full text-sm sm:text-base md:text-lg leading-snug sm:leading-normal md:leading-relaxed mt-4"
           style={{ color: "var(--text-color)" }}
         >
-          Adzat aggregates jobs from multiple platforms into one smart dashboard,
+          Adzat aggregates jobs from multiple platforms into one smart dashboard,<br/>
           so you save time and never miss an opportunity.
         </motion.h2>
 
@@ -71,8 +71,8 @@ const Hero = () => {
       </div>
 
       {/* Right Side - Spline 3D */}
-      <div className="w-full max-w-lg h-[750px] rounded-lg  overflow-hidden cursor-pointer pointer-events-auto z-0">
-        <Spline scene="https://prod.spline.design/h0-AVkayoH4Q14Ez/scene.splinecode" />
+      <div className="mt-10">
+        <Spline scene="https://prod.spline.design/4ugBKYWCj3la4zGy/scene.splinecode" />
       </div>
     </section>
   );
