@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed left-1/2 -translate-x-1/2 z-30 transition-all duration-300
-      flex items-center justify-between border rounded-full backdrop-blur-md
+      flex items-center justify-between border rounded-full backdrop-blur-md mt-4
       px-6 sm:px-10 py-3
       w-[95%] md:w-[85%] lg:w-[75%]
       ${scrolled ? "shadow-xl border-white/30" : "border-white/20"} 

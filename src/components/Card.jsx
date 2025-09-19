@@ -45,7 +45,7 @@ const Card = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-screen">
+    <section id="features" ref={containerRef} className="relative w-full h-screen">
       {/* section heading */}
       <div className="text-center mt-20">
         <span className="px-4 rounded-full border border-gray-600 text-sm text-gray-400">
@@ -85,14 +85,11 @@ const Card = () => {
                 sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue
                 semper porta.
               </p>
-              <button className="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition">
-                Learn More
-              </button>
             </div>
           </div>
         </section>
       ))}
-    </div>
+    </section>
   );
 };
 

@@ -62,7 +62,7 @@ export default function HowItWorks() {
   }, [activeTab]);
 
   return (
-    <div id="howitworks"
+    <section id="howitworks"
     className="w-full min-h-screen  text-white flex flex-col items-center py-20">
       {/* heading */}
       <div className="text-center mb-12">
@@ -108,6 +108,6 @@ export default function HowItWorks() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

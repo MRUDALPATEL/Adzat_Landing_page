@@ -3,9 +3,9 @@ import Card from './Card'
 
 const Features = () => {
   return (
-    <div id='features'>
+    <section id='features'>
       <Card />      
-    </div>
+    </section>
   )
 }
 
