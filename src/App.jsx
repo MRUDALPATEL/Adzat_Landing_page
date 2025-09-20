@@ -20,7 +20,7 @@ const App = () => (
         <VideoSection/>
         <ProductOverview/>
         <LogoSlider/>
-        <Stats />
+        <Stats /> 
         <Features/>
         <HowItWorks/>
         <Testimonials />
