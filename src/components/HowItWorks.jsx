@@ -1,52 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { svg } from "../assets";
+import { jobSeekerTabs, companyTabs } from "../constants";
 
-const tabs = [
-  {
-    id: "persona",
-    title: "Persona Creation",
-    heading: "Create realistic personas",
-    description:
-      "Quickly generate detailed personas from raw data, making it easier to model and simulate real-world behavior.",
-    image: svg,
-  },
-  {
-    id: "society",
-    title: "Society Construction",
-    heading: "Modeling how ideas spread through social networks",
-    description:
-      "We map how they connect and influence one another through a Social Graph — linking people by shared interests, backgrounds, and past interactions.",
-   image: svg,
-  },
-  {
-    id: "ai",
-    title: "AI-driven Simulations",
-    heading: "Run simulations powered by AI",
-    description:
-      "Simulate real-world interactions and outcomes with AI, allowing you to test and predict scenarios.",
-    image: svg,
-  },
-  {
-    id: "results",
-    title: "Result Generation",
-    heading: "Generate meaningful insights",
-    description:
-      "Turn raw simulations into actionable insights with automated analysis and visualizations.",
-    image: svg,
-  },
-  {
-    id: "abtest",
-    title: "Automatic A/B Testing",
-    heading: "Validate ideas through testing",
-    description:
-      "Automatically set up and run A/B tests to validate hypotheses and refine strategies.",
-    image: svg,
-  },
-];
 
-export default function HowItWorks() {
-  const [activeTab, setActiveTab] = useState("society");
+
+function TabSection({ title, tabs }) {
+  const [activeTab, setActiveTab] = useState(tabs[0].id);
   const contentRef = useRef(null);
 
   const activeContent = tabs.find((tab) => tab.id === activeTab);
@@ -62,19 +22,13 @@ export default function HowItWorks() {
   }, [activeTab]);
 
   return (
-    <section id="howitworks"
-    className="w-full min-h-screen  text-white flex flex-col items-center py-20">
-      {/* heading */}
+    <div className="w-full flex flex-col items-center mb-20">
+      {/* Section heading */}
       <div className="text-center mb-12">
-        <span className="px-4 py-1 rounded-full border border-gray-600 text-sm text-gray-400">
-          How It Works
-        </span>
-        <h2 className="text-3xl md:text-4xl font-bold mt-4">
-          From raw data to real understanding
-        </h2>
+        <h2 className="text-3xl md:text-4xl font-bold">{title}</h2>
       </div>
 
-      {/* tabs */}
+      {/* Tabs */}
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         {tabs.map((tab) => (
           <button
@@ -91,10 +45,10 @@ export default function HowItWorks() {
         ))}
       </div>
 
-      {/* animated card content */}
+      {/* Animated card content */}
       <div
         ref={contentRef}
-        className="w-11/12 max-w-5xl  border border-neutral-800 rounded-xl p-8 flex flex-col md:flex-row items-center gap-8"
+        className="w-11/12 max-w-5xl border border-neutral-800 rounded-xl p-8 flex flex-col md:flex-row items-center gap-8"
       >
         <div className="flex-1">
           <h3 className="text-2xl font-bold mb-4">{activeContent.heading}</h3>
@@ -108,6 +62,31 @@ export default function HowItWorks() {
           />
         </div>
       </div>
+    </div>
+  );
+}
+
+export default function HowItWorks() {
+  return (
+    <section
+      id="howitworks"
+      className="w-full min-h-screen text-white flex flex-col items-center py-20"
+    >
+      {/* Main Heading */}
+      <div className="text-center mb-16">
+        <span className="px-4 py-1 rounded-full border border-gray-600 text-sm text-gray-400">
+          How It Works
+        </span>
+        <h2 className="text-3xl md:text-4xl font-bold mt-4">
+          Simplifying hiring for everyone
+        </h2>
+      </div>
+
+      {/* Job Seeker Section */}
+      <TabSection title="For Job Seekers" tabs={jobSeekerTabs} />
+
+      {/* Company Section */}
+      <TabSection title="For Companies" tabs={companyTabs} />
     </section>
   );
 }
